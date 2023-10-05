@@ -6,7 +6,7 @@ const cors = require('cors')
 require('dotenv').config()
 // Import router từ file index.js
 const user = require('./routes/user.routes')
-const post = require('./routes/post.routes')
+const product = require('./routes/product.routes')
 // Sử dụng router với prefix /api
 const app = express();
 const server = http.createServer(app);
@@ -20,7 +20,7 @@ app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 app.use('/api/user', user);
-app.use('/api/post', post);
+app.use('/api/product', product);
 // Khi có một kết nối mới được thiết lập
 const PORT = 1234;
 
